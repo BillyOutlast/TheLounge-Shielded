@@ -13,6 +13,7 @@ services:
       - /dev/net/tun:/dev/net/tun
     ports:
       - "${IRC_AIRVPN_PORT}:${IRC_AIRVPN_PORT}"
+      - "9000:9000"
     volumes:
       - ./gluetun:/gluetun
     environment:
@@ -44,8 +45,6 @@ services:
     network_mode: "service:gluetun"
     environment:
       - HOSTNAME=thelounge-IRC-shielded
-    ports:
-      - "9000:9000"
     volumes:
       - ./thelounge:/var/opt/thelounge
     restart: always
