@@ -36,7 +36,7 @@ services:
     security_opt:
       - "label=disable"
     depends_on:
-      - drop
+      - thelounge
   thelounge:
     image: ghcr.io/thelounge/thelounge:latest
     container_name: thelounge
