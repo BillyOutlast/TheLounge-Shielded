@@ -6,6 +6,8 @@ services:
     networks:
       gluetun-IRC-network:
         ipv4_address: 172.21.0.20
+    security_opt:
+      - "label=disable"
     cap_add:
       - NET_ADMIN
       - NET_RAW
