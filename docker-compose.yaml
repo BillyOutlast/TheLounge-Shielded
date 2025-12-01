@@ -30,6 +30,7 @@ services:
     restart: unless-stopped
     environment:
       - HOSTNAME=nginx-IRC-shielded
+      - IRC_AIRVPN_PORT=${IRC_AIRVPN_PORT}
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/certs:/etc/nginx/certs:ro
@@ -48,6 +49,8 @@ services:
     volumes:
       - ./thelounge:/var/opt/thelounge
     restart: always
+    security_opt:
+      - "label=disable"
 
 networks:
   gluetun-IRC-network:
