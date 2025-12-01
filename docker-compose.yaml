@@ -11,9 +11,6 @@ services:
       - NET_RAW
     devices:
       - /dev/net/tun:/dev/net/tun
-    ports:
-      - "${IRC_AIRVPN_PORT}:${IRC_AIRVPN_PORT}"
-      - "9000:9000"
     volumes:
       - ./gluetun:/gluetun
     environment:
